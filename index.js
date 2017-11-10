@@ -549,9 +549,9 @@ module.exports = {
 									language_tail:local_path[1]
 								});
 							} else {
-								local_path = sprintf('./%(language_root)s/%(language)s/', {
+								local_path = sprintf('./%(language_root)s/', {
 									language_root: local_path[0],
-									language: langPath
+									
 								});
 							}
 
@@ -621,7 +621,7 @@ module.exports = {
 								ext_name = '.po';
 							}
 
-							file_name = local_path + '/' + file_name + ext_name;
+							file_name = local_path + '/' + file_name + '-' + langIso + ext_name;
 
 							if (!fs.existsSync(local_path)) {
 								mkdirp.sync(local_path);
